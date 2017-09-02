@@ -22,7 +22,7 @@ George W.
 """
 
 def extract_phone_numbers(string):
-    r = re.compile(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})')
+    r = re.compile(r'(\+\d{1,2})?\(?\d{3}\)?[\s.-]?[\s.-]?[\s.-]?\d{3}[\s.-]?[\s.-]?[\s.-]?\d{4}')
     phone_numbers = r.findall(string)
     return [re.sub(r'\D', '', number) for number in phone_numbers]
 
